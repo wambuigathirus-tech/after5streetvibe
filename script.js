@@ -76,10 +76,21 @@ function renderAutoScrollGallery(images, containerId) {
   const htmlContent = container.innerHTML;
   container.innerHTML = htmlContent + htmlContent;
 }
+renderEvents(upcomingEvents, "upcomingEvents", true);
 renderEvents(pastEvents, "pastEvents", false);
 renderAutoScrollGallery(campusTourImages, "campusTourGallery");
 renderAutoScrollGallery(iecbImages, "iecbGallery");
 renderAutoScrollGallery(eventsImages, "eventsGallery");
+
+const entranceOverlay = document.getElementById("entranceOverlay");
+const enterButton = document.getElementById("enterButton");
+if (entranceOverlay && enterButton) {
+  document.body.classList.add("entrance-active");
+  enterButton.addEventListener("click", () => {
+    entranceOverlay.classList.add("hidden");
+    document.body.classList.remove("entrance-active");
+  });
+}
 
 const videoButton = document.getElementById("videoButton");
 const videoLinks = document.getElementById("videoLinks");

@@ -490,6 +490,77 @@ body::after {
   position: absolute;
 }
 
+.entrance-active {
+  overflow: hidden;
+}
+
+.entrance-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: url('assets/t1.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+.entrance-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 10, 23, 0.65);
+  mix-blend-mode: multiply;
+}
+
+.entrance-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 560px;
+  color: #ffffff;
+}
+
+.entrance-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.entrance-logo {
+  width: 140px;
+  filter: drop-shadow(0 35px 45px rgba(0, 0, 0, 0.45));
+  mix-blend-mode: screen;
+}
+
+.entrance-inner h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 0.5rem 0 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+.entrance-text {
+  margin: 0 auto 2rem;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 34rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.entrance-overlay .btn {
+  min-width: 180px;
+  padding: 1rem 2rem;
+}
+
+.entrance-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
 .instagram-footer {
   margin-top: 1.75rem;
   display: flex;
