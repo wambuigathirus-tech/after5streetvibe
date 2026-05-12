@@ -329,6 +329,14 @@ img {
   padding: 2rem;
 }
 
+.event-card-image {
+  width: 100%;
+  border-radius: 24px;
+  margin-bottom: 1.25rem;
+  object-fit: cover;
+  display: block;
+}
+
 .about-grid h3,
 .card h3,
 .media-card h3,
@@ -622,4 +630,18 @@ body::after {
   .hero {
     padding-top: 3rem;
   }
+
+  .events-list .upcoming-card {
+    padding: 1.25rem;
+  }
+
+  .events-list .upcoming-card .event-card-image {
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .events-list .upcoming-card p:not(.event-meta) {
+    display: none;
+  }
 }
+
