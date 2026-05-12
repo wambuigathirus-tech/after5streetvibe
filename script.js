@@ -115,7 +115,6 @@ renderAutoScrollGallery(campusTourImages, "campusTourGallery");
 renderAutoScrollGallery(iecbImages, "iecbGallery");
 renderAutoScrollGallery(eventsImages, "eventsGallery");
 addScrollButton("seeUpcomingButton", "#events");
-addScrollButton("partnerButton", "#contact");
 
 const entranceOverlay = document.getElementById("entranceOverlay");
 const enterButton = document.getElementById("enterButton");
@@ -134,14 +133,5 @@ if (videoButton && videoLinks) {
     event.preventDefault();
     videoLinks.classList.toggle("hidden");
     videoButton.textContent = videoLinks.classList.contains("hidden") ? "Videos" : "Hide Videos";
-  });
-}
-
-const emailButton = document.getElementById("emailButton");
-if (emailButton) {
-  emailButton.addEventListener("click", (event) => {
-    if (!emailButton.href) return;
-    // Ensure mailto opens even if the browser does not automatically handle anchor navigation.
-    window.location.href = emailButton.href;
   });
 }
