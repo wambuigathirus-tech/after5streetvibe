@@ -118,11 +118,31 @@ addScrollButton("seeUpcomingButton", "#events");
 
 const entranceOverlay = document.getElementById("entranceOverlay");
 const enterButton = document.getElementById("enterButton");
+
+// Auto-hide overlay if user links directly to a section (not home)
+const currentHash = window.location.hash;
+const shouldSkipEntrance = currentHash && currentHash !== '#home' && currentHash !== '';
+
 if (entranceOverlay && enterButton) {
   document.body.classList.add("entrance-active");
+  
+  // Auto-skip if linking to specific section
+  if (shouldSkipEntrance) {
+    entranceOverlay.classList.add("hidden");
+    document.body.classList.remove("entrance-active");
+  }
+  
   enterButton.addEventListener("click", () => {
     entranceOverlay.classList.add("hidden");
     document.body.classList.remove("entrance-active");
+  });
+  
+  // Allow Escape key to skip entrance overlay
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !entranceOverlay.classList.contains("hidden")) {
+      entranceOverlay.classList.add("hidden");
+      document.body.classList.remove("entrance-active");
+    }
   });
 }
 
