@@ -130,11 +130,13 @@ if (entranceOverlay && enterButton) {
   if (shouldSkipEntrance) {
     entranceOverlay.classList.add("hidden");
     document.body.classList.remove("entrance-active");
+    document.body.classList.add("skip-entrance");
   }
   
   enterButton.addEventListener("click", () => {
     entranceOverlay.classList.add("hidden");
     document.body.classList.remove("entrance-active");
+    document.body.classList.remove("skip-entrance");
   });
   
   // Allow Escape key to skip entrance overlay

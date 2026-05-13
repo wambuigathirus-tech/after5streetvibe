@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <script>
+    if (location.hash && location.hash !== '#home') {
+      document.body.classList.add('skip-entrance');
+    }
+  </script>
   <div id="entranceOverlay" class="entrance-overlay">
     <div class="entrance-inner">
       <div class="entrance-brand">
