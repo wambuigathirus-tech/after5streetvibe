@@ -404,6 +404,79 @@ img {
   display: none !important;
 }
 
+body.entrance-active {
+  overflow: hidden;
+}
+
+.entrance-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: linear-gradient(
+      to bottom,
+      rgba(2, 4, 11, 0.72),
+      rgba(2, 4, 11, 0.88)
+    ),
+    url("assets/t1.jpg") center/cover no-repeat;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.entrance-inner {
+  width: min(560px, 100%);
+  padding: 2.5rem 2rem;
+  border-radius: 32px;
+  background: rgba(8, 12, 22, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.entrance-brand {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.entrance-logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+}
+
+.entrance-text {
+  max-width: 32rem;
+  margin: 0 auto 1.5rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.entrance-overlay button {
+  min-width: 220px;
+}
+
+body.entrance-active main,
+body.entrance-active .site-header,
+body.entrance-active .geometric-lines {
+  filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+}
+
+body.skip-entrance .entrance-overlay,
+.entrance-overlay.skip-entrance {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .media-card a {
   color: var(--primary);
   text-decoration: none;
